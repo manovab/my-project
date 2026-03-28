@@ -6,6 +6,10 @@
 
 import axios from "axios";
 
+const isDev = process.env.NODE_ENV === "development";
+
 export const api = axios.create({
-  baseURL: ""   // ✅ IMPORTANT
+  baseURL: isDev
+    ? "" // ✅ MSW intercepts in development
+    : process.env.REACT_APP_API_URL // ✅ real backend in production
 });
