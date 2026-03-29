@@ -1,0 +1,23 @@
+name: Playwright Tests
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3   # updated version
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3   # updated version
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Playwright tests
+        run: npx playwright test

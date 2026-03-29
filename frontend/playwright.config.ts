@@ -7,12 +7,12 @@ export default defineConfig({
   testIgnore: ['**/src/**'],
   
   use: {
-    baseURL: 'http://localhost:8080',
+    baseURL: 'http://localhost:3000',
   },
 
   webServer: {
     command: 'npm start',
-    port: 8080,
+    port: 3000,
     reuseExistingServer: true,
   },
 });
